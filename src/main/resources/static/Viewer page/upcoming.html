@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viewer Dashboard</title>
+  <script src="/webjars/jquery/jquery.min.js" rel="stylesheet"></script>
+  <script src="/webjars/sockjs-client/sockjs.min.js" rel="stylesheet"></script>
+  <script src="/webjars/stomp-websocket/stomp.min.js" rel="stylesheet"></script>
+  <link rel="stylesheet" href="styles_upcoming.css"> 
+</head>
+<body>
+   <header class="welcome-header">
+        <h1 id="welcome-text">SCORE!</h1>
+        <h2><a href="Viewer_page.html" class="home-botton">Home</a></h2>
+        <h2><a href="pt.html" class="points-table-button">Points table</a></h2>
+        <h2><a href="index.html" class="logout-button">LOGOUT</a></h2>
+    </header>
+  <main>
+    <div class="container">
+      <h4>
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table id="matchdata">
+                              <tr id="team"></td>
+                              <tr id="time"></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </h4>
+    </div>
+  </main>
+  <script src="script_upcoming.js"></script>
+</body>
+  
+</html>
