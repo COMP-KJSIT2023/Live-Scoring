@@ -4,7 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viewer Dashboard</title>
-    <link rel="stylesheet" href="styles_index.css"> <!-- Link to your CSS file -->
+   
+    <style>
+       .body {
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    background-image: url('ground.jpg'); /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
+    background-size: cover; /* This will make the image cover the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: top;
+    flex-direction: column;
+    height: 100vh;
+}
+.welcome-header {
+    text-align: left;
+    align-self: left;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    background-color: #f8fafcf5; /* Background color for the header */
+    color: #0838ba; /* Text color */
+    padding: 10px 30px; /* Add padding for spacing */
+}
+
+.welcome-header h1 {
+    margin: 0;
+}
+.welcome-header h2 {
+    margin: 0; /* Remove default margin */
+}
+
+.live {
+    width: 100%; /* Takes up the full width of the container */
+    background-color: #9ec8a052;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    overflow-y: auto;
+}
+
+.live:hover{
+    transform: translate(0, -5px); /* Adjust the translation value */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 425px) {
+   .welcome-header {
+    width: 100%
+}
+.welcome-header h1 {
+    font-size: 1.0em;
+}
+.welcome-header h2 {
+   font-size: 0.8em;
+}
+.live {
+    width: 100%;
+font-size: 1.2em;
+}
+}
+
+@media (max-width: 768px) {
+.welcome-header {
+    width: 100%
+}
+.welcome-header h1 {
+    font-size: 1.6em;
+}
+.welcome-header h2 {
+   font-size: 1.1em;
+}
+.live {
+    width: 100%;
+    font-size: 1.4em;
+}
+
+}
+
+@media (max-width: 1024px) {
+   .welcome-header {
+    width: 100%
+}
+.welcome-header h1 {
+    font-size: 2em;
+}
+.welcome-header h2 {
+   font-size: 1.8em;
+}
+.live {
+    width: 100%;
+font-size: 1.8em;
+}
+
+}
+@media (max-width: 1440px) {
+   .welcome-header {
+    width: 100%
+}
+.welcome-header h1 {
+    font-size: 2.1em;
+}
+.welcome-header h2 {
+   font-size: 1.9em;
+}
+.live {
+    width: 100%;
+font-size: 1.9em;
+}
+}
+    </style>
 </head>
 <body>
     <header class="welcome-header">
