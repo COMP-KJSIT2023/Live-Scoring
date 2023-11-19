@@ -269,12 +269,10 @@ div.content {
       type="image/x-icon"
     />
 
-    <!-- jquary -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!--sockjs-->
     <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
-        <script>
+    <script>
       $(document).ready(function() {
         var dropdown = document.getElementsByClassName("dropdown-btn");
         var i;
@@ -290,7 +288,7 @@ div.content {
             }
           });
         }
-        $("#add-btn").click(() => {
+        $("#add").click(() => {
           sendmessage();
       });
       });
@@ -344,23 +342,13 @@ div.content {
     </div>       
 <!-- SIDEBAR  -->
     <div class="sidebar">
-      
-      <a class="" href="../adminhome.html"
-        ><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a
-      >
-
       <a href="#score" class="dropdown-btn"
         ><i class="fa fa-futbol-o" aria-hidden="true"></i> Score Section
         <i class="fa fa-caret-down"></i>
       </a>
       <div class="dropdown-container">
-        <a href="Scorer/cricket.html">Cricket</a>
-        <a href="Scorer/football.html">Football</a>
-        
-      </div>
-      <a href="addSchedule.html" class="st1"
-        ><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Schedule</a
-      >
+        <a href="/Scorer/cricket">Cricket</a>
+        <a href="/Scorer/football">Football</a>
      
     </div>
 <!-- START MAIN CONTENT -->
@@ -374,11 +362,11 @@ div.content {
         <form action="#" id="header_date_form">
           <div class="header_input_style">
             <p>Date:</p>
-            <input type="date" name="" id="" />
+            <input type="text" placeholder="YYYY/MM/DD" name="" id="date" />
           </div>
           <div class="header_input_style">
             <p>Time:</p>
-            <input type="time" name="" id="" />
+            <input type="text" name="" id="time" />
           </div>
         </form>
       </div>
@@ -392,7 +380,7 @@ div.content {
               <input
                 type="text"
                 name=""
-                id="team_name"
+                id="team-name1"
                 placeholder="Enter Team name.."
               />
             </div>
@@ -406,7 +394,7 @@ div.content {
               <input
                 type="text"
                 name=""
-                id="team_name"
+                id="team-name2"
                 placeholder="Enter Team name.."
               />
             </div>
@@ -414,7 +402,7 @@ div.content {
         </div>
       </div>
       <div class="add_btn_sec">
-        <button id="add_btn" onclick="add()">ADD</button>
+        <button id="add" >ADD</button>
       </div>
     </div>
   </body>

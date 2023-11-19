@@ -1,0 +1,78 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    background-image: url('footballup.png'); /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
+    background-size: cover; /* This will make the image cover the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: top;
+    flex-direction: column;
+    height: 100vh;
+}
+.welcome-header {
+    text-align: left;
+    align-self: left;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    background-color: #f8fafcf5; /* Background color for the header */
+    color: #0838ba; /* Text color */
+    padding: 10px 30px; /* Add padding for spacing */
+}
+
+.welcome-header h1 {
+    margin: 0; /* Remove default margin */
+}
+
+.matches {
+    background-color: #fff;
+    opacity: 0.8;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 100; /* Set the width as needed */
+    height: auto; /* Set the height as needed */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    position: relative;
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template: row;
+    margin-right: 300px;
+    margin-left: 300px;
+    align-items: center;
+    padding: 20px;
+}
+.container {
+    background-color: #9ec8a052;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 100;
+    height: auto; 
+    justify-content: center;
+    align-items: top;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    position: relative;
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.dropdown{
+    width: 100%; /* Takes up the full width of the container */
+    background-color: #9ec8a052;
+    border-radius: 30px;
+    margin: 20px 10px;
+    display: flex;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    overflow-y: auto;
+}
+p{
+font-size: 30px
+}
