@@ -36,7 +36,7 @@ public class securityconfig {
 
     
         http.authorizeHttpRequests((authorize) -> authorize
-                               .requestMatchers(AntPathRequestMatcher.antMatcher("/resources/static/*")).permitAll()
+                               .requestMatchers(AntPathRequestMatcher.antMatcher("/Viewer/*")).permitAll()
                                .anyRequest().authenticated())
             .formLogin(form -> form
                                .loginPage("/login").permitAll()
