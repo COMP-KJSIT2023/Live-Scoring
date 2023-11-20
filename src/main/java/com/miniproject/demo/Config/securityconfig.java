@@ -1,6 +1,5 @@
 package com.miniproject.demo.Config;
 
-import org.springframework.boot.autoconfigure.security.reactive.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -42,8 +41,6 @@ public class securityconfig {
         http.authorizeHttpRequests((requests) -> requests
                                .requestMatchers(AntPathRequestMatcher.antMatcher("/webjars/**")).permitAll()
                                .requestMatchers(AntPathRequestMatcher.antMatcher("/Viewer/*")).permitAll()
-                               .requestMatchers(AntPathRequestMatcher.antMatcher("/static/images/*")).permitAll()
-                               .requestMatchers(AntPathRequestMatcher.antMatcher("/static/Scripts/*")).permitAll()
                                .anyRequest().authenticated())
             .formLogin(form -> form
                                .loginPage("/login").permitAll()
