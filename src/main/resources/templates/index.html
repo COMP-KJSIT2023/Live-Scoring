@@ -4,9 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <script src="/webjars/jquery/jquery.min.js" rel="stylesheet"></script>
-    <script src="/webjars/sockjs-client/sockjs.min.js" rel="stylesheet"></script>
-    <script src="/webjars/stomp-websocket/stomp.min.js" rel="stylesheet"></script>
     <style>
 *{
   box-sizing: border-box;
@@ -268,22 +265,7 @@ div.content {
 <script src="/webjars/jquery/jquery.min.js" rel="stylesheet"></script>
 <script src="/webjars/sockjs-client/sockjs.min.js" rel="stylesheet"></script>
 <script src="/webjars/stomp-websocket/stomp.min.js" rel="stylesheet"></script>
-    <script>
-      $(document).ready(function() {
-        var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
+    <script>    
         var stompClient = null;
         
         function connect() {
@@ -291,19 +273,11 @@ for (i = 0; i < dropdown.length; i++) {
             stompClient = Stomp.over(socket);
             stompClient.connect({}, function (frame) {
                 console.log("Connected : " + frame);    
-                stompClient.subscribe("/topic/return-to", function (response) {
-                    showmessage(JSON.parse(response.body));
-                }); 
+                stompClient.subscribe("/topic/return-to", function (response) {}); 
             });
         }
         connect();
-        
-        function showmessage(matchdata) {
-            
-            $("#team1").append('${matchdata.team1}');
-            $("#matchdata").prepend(`<tr><td><b>${matchdata.team1}:</b><b>${matchdata.team2}:</b>${matchdata.time}:${matchdata.date}</td></tr>`);
-        }
-        
+ 
         function sendmessage() {
             try {
                 let jsonOb = {
@@ -317,8 +291,7 @@ for (i = 0; i < dropdown.length; i++) {
                 console.error("Error in sendmessage:", error);
             }
         }
-        
-        $
+        $(document).ready(function() {
         $("#add").click(() => {
             sendmessage();
         });

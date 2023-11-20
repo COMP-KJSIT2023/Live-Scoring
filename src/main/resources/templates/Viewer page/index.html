@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <script src="/webjars/jquery/jquery.min.js" rel="stylesheet"></script>
+    <script src="/webjars/jquery/jquery.min.js" rel="stylesheet"></script>
     <script src="/webjars/sockjs-client/sockjs.min.js" rel="stylesheet"></script>
     <script src="/webjars/stomp-websocket/stomp.min.js" rel="stylesheet"></script>
+    <script >
+        var stompClient = null;
+
+        function connect() {
+            let socket = new SockJS("/server1");
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, function (frame) {
+                console.log("Connected : " + frame);
+                stompClient.subscribe("/topic/return-to", function (response) {
+                  showmessage(JSON.parse(response.body));
+              });
+            });
+        }
+        function showmessage(matchdata) {
+            $("#teams").append(`${matchdata.team1} VS ${matchdata.team2}`);
+            $("#time").append(`${matchdata.date} : ${matchdata.time}`);
+        }
+        
+        connect();
+    </script>
     <title>Viewer Dashboard</title>
    
     <style>
@@ -131,25 +151,24 @@ font-size: 1.9em;
     <main>
             <div class="live">
                 <h2>Live matches</h2>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="card">
+                                <div class="table-responsive">
+                                    <table id="matchdata">
+                                      <tr id="teams"></td>
+                                      <tr id="time"></tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
                 <hr> 
                 <section class="scoreboard">
                 </section>
             </div>
     </main>
-    <script >
-        var stompClient = null;
-
-        function connect() {
-            let socket = new SockJS("/server1");
-            stompClient = Stomp.over(socket);
-            stompClient.connect({}, function (frame) {
-                console.log("Connected : " + frame);
-                stompClient.subscribe("/topic/return-to", function (response) {
-                  showmessage(JSON.parse(response.body));
-              });
-            });
-        }
-        connect();
-    </script>
 </body>
 </html>
