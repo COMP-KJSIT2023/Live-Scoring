@@ -126,7 +126,6 @@ font-size: 1.9em;
     <header class="welcome-header">
         <h1 id="welcome-text">SCORE!</h1>
         <h2><a href="/Viewer/upcoming" class="upcoming-button">Upcoming matches</a></h2>
-        <h2><a href="/Viewer/pt" class="points-table-button">Points table</a></h2>
        </header>
 
     <main>
@@ -137,6 +136,20 @@ font-size: 1.9em;
                 </section>
             </div>
     </main>
-    <script src="script_index.js"></script>
+    <script >
+        var stompClient = null;
+
+        function connect() {
+            let socket = new SockJS("/server1");
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, function (frame) {
+                console.log("Connected : " + frame);
+                stompClient.subscribe("/topic/return-to", function (response) {
+                  showmessage(JSON.parse(response.body));
+              });
+            });
+        }
+        connect();
+    </script>
 </body>
 </html>

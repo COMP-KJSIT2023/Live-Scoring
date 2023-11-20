@@ -41,6 +41,7 @@ public class securityconfig {
              
         http.authorizeHttpRequests((requests) -> requests
                                .requestMatchers(AntPathRequestMatcher.antMatcher("/webjars/**")).permitAll()
+                               .requestMatchers(AntPathRequestMatcher.antMatcher("/Viewer/*")).permitAll()
                                .requestMatchers(AntPathRequestMatcher.antMatcher("/static/images/*")).permitAll()
                                .requestMatchers(AntPathRequestMatcher.antMatcher("/static/Scripts/*")).permitAll()
                                .anyRequest().authenticated())

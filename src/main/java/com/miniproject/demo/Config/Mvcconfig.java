@@ -18,7 +18,6 @@ public class Mvcconfig implements WebMvcConfigurer {
         registry.addViewController("/index").setViewName("/index");
         registry.addViewController("/Viewer/index").setViewName("Viewer page/index");
         registry.addViewController("/Viewer/upcoming").setViewName("Viewer page/upcoming");
-        registry.addViewController("/Viewer/pt").setViewName("Viewer page/pt");
         registry.addViewController("/Scorer/cricket").setViewName("Scorer page/cricket");
         registry.addViewController("/Scorer/football").setViewName("Scorer page/football");
         registry.addViewController("/Scorer/batfirst").setViewName("Scorer page/batting");
